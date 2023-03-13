@@ -7,14 +7,21 @@ Widget? modelImages(url){ return Padding(
     padding: const EdgeInsets.all(8.0),
   child: Container(height: 100,child: Image.asset(url), decoration: BoxDecoration(borderRadius: BorderRadius.circular(10))),);
 }
-Widget? modelIcon(url){
+Widget? modelIcon(url, {text="Title"}){
+
   return Padding(
     padding: const EdgeInsets.all(8.0),
-    child: Container(
-      width: 60,
-      height: 60,
-      decoration: BoxDecoration( color: Colors.white,borderRadius: BorderRadius.circular(10)),
-      child: Image.asset(url),
+    child: Column(
+      children: [
+        Container(
+          width: 60,
+          height: 60,
+          decoration: BoxDecoration( color: Colors.white,borderRadius: BorderRadius.circular(10)),
+          child: Image.asset(url),
+        ),
+        SizedBox(height: 10),
+        Text(text)
+      ],
     ),
   );
 
